@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Commands
+- ng new noctis --routing --style=scss --verbose
+
+### Create theme
+- ng add @angular/material
+
+
+### Create core functionalities
+- ng generate module @core/core --module=app --flat
+- ng generate module pages --route pages --module app.module
+- ng generate component @core/components/not-found --module core
+- npm install --save @auth0/angular-jwt
+- ng generate service @core/services
+
+- ng generate guard @core/helpers/auth --skipTests
+- ng generate guard @core/helpers/role --skipTests
+
+- ng generate module @core/auth --route auth --module app.module
+- ng generate component @core/auth/login --module auth.module
+- ng generate service @core/auth/services/login
+- ng generate module pages/demos --route pages --module pages.module
+
+- ng generate module pages/[page name] --route [page name] --module pages.module
+
+- ng generate module [module] --route [path to the lazy route] --module [parent module]
+
+- find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
