@@ -35,6 +35,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Create core functionalities
 - ng generate module @core/core --module=app --flat
+- ng generate module @theme/theme --module=app --flat
 - ng generate module pages --route pages --module app.module
 - ng generate component @core/components/not-found --module core
 - npm install --save @auth0/angular-jwt
