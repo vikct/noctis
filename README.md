@@ -31,6 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Create theme
 - ng add @angular/material
+- npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page
 
 
 ### Create core functionalities
