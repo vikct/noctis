@@ -2,12 +2,12 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeComponent } from './theme.component';
 
-import { LayoutComponent } from './layout';
+// import { LayoutComponent } from './layout';
 
 @NgModule({
   declarations: [
     ThemeComponent,
-    LayoutComponent
+    // LayoutComponent
   ],
   imports: [
     CommonModule
