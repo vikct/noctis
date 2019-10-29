@@ -15,8 +15,9 @@ import { ThemeModule } from './@theme/theme.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule,
-    ThemeModule
+
+    CoreModule.forRoot(),
+    ThemeModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
