@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders,Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,5 +28,7 @@ const INTERCEPTORS = [
   ]
 })
 export class CoreModule {
-
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    
+  }
 }

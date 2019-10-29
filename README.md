@@ -44,6 +44,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ng generate guard @core/helpers/auth --skipTests
 - ng generate guard @core/helpers/role --skipTests
+- ng generate guard @core/helpers/module-import --skipTests
 
 - ng generate module @core/auth --route auth --module app.module
 - ng generate component @core/auth/login --module auth.module
