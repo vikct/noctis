@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ThemeComponent } from './theme.component';
 
 // import { LayoutComponent } from './layout';
+import { ThemeMaterialModule } from './theme-material.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ThemeComponent } from './theme.component';
     // LayoutComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ThemeMaterialModule
   ],
   exports: [
     ThemeComponent
