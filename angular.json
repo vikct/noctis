@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/material-design-icons/iconfont/material-icons.css",
               "src/app/@theme/styles/styles.scss",
               "src/app/@theme/styles/theme.scss"
             ],
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/material-design-icons/iconfont/material-icons.css",
               "src/app/@theme/styles/styles.scss",
               "src/app/@theme/styles/theme.scss"
             ],

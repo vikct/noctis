@@ -26,6 +26,7 @@
     "@spectrum-css/page": "^2.0.0",
     "@spectrum-css/vars": "^2.0.0",
     "hammerjs": "^2.0.8",
+    "material-design-icons": "^3.0.1",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

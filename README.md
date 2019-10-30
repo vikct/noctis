@@ -8,7 +8,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`. 
+Alternatively, you can run `ng generate module [module] --route [path to the lazy route] --module [parent module]` to quickly generate a component that bundles with module, and route.
 
 ## Build
 
@@ -31,6 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Create theme
 - ng add @angular/material
+- npm install --save material-design-icons
 - npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page
 
 
@@ -54,8 +56,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ng generate module pages/[page name] --route [page name] --module pages.module
 
-- ng generate module [module] --route [path to the lazy route] --module [parent module]
+
 
 - find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 
 - git mv -f OldFileNameCase newfilenamecase
+
+## Food for thoughts
+- https://www.npmjs.com/package/@rxweb/reactive-form-validators
