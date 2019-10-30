@@ -16,11 +16,11 @@
   <mat-sidenav-container class="sidenav-container">
 
     <mat-sidenav #drawer mode="push">
-      <p>test</p>
+      <p color="accent">test</p>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <p>content</p>
+      <ng-content select="router-outlet"></ng-content>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
