@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  template: `
+    <div class="auth-container">
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: [`
+    .auth-container {
+      padding: 50px;
+    }
+  `]
 })
-export class AuthComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class AuthComponent { }
