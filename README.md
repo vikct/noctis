@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4210/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -64,3 +64,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Food for thoughts
 - https://www.npmjs.com/package/@rxweb/reactive-form-validators
+- https://blog.techbridge.cc/2018/10/13/pwa-in-action/
