@@ -1,7 +1,16 @@
-import { NgModule, ModuleWithProviders,Optional, SkipSelf } from '@angular/core';
+import {
+  NgModule,
+  ModuleWithProviders,
+  Optional,
+  SkipSelf
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
@@ -25,7 +34,8 @@ const INTERCEPTORS = [
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ]
 })
 export class CoreModule {

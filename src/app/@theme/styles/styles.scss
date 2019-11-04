@@ -12,8 +12,9 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$noctis-primary: mat-palette($mat-gray, 800, 700, 900);
+$noctis-primary: mat-palette($mat-gray, 700, 600, 800);
 $noctis-accent: mat-palette($mat-amber, A200, A100, A400);
+$noctis-background-color: map_get($mat-grey, 800);
 
 // The warn palette is optional (defaults to red).
 $noctis-warn: mat-palette($mat-red);
@@ -27,6 +28,10 @@ $lunafreya-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $noctis-theme: mat-dark-theme($noctis-primary, $noctis-accent, $noctis-warn);
 $lunafreya-theme: mat-light-theme($lunafreya-primary, $lunafreya-accent, $lunafreya-warn);
+
+$background: map-get($noctis-theme, background);
+$background: map_merge($background, (background: $noctis-background-color));
+$noctis-theme: map_merge($noctis-theme, (background: $background));
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
