@@ -5,17 +5,14 @@ import { Component } from '@angular/core';
   template: `
     <div
       class="auth-container"
-      fxLayout="row"
-      fxLayout.xs="column"
-      fxLayoutAlign="center center"
-      fxFlexFill
       >
       <router-outlet></router-outlet>
     </div>
   `,
   styles: [`
     .auth-container {
-      padding: 50px;
+      margin: 20px;
+      height:94.5vh;
     }
   `]
 })
