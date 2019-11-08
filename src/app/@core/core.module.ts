@@ -36,6 +36,9 @@ const INTERCEPTORS = [
     RouterModule,
     HttpClientModule,
     FlexLayoutModule
+  ],
+  exports: [
+    FlexLayoutModule
   ]
 })
 export class CoreModule {
