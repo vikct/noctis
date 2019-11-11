@@ -37,9 +37,9 @@ const INTERCEPTORS = [
     HttpClientModule,
     FlexLayoutModule
   ],
-  exports: [
-    FlexLayoutModule
-  ]
+  // exports: [
+  //   FlexLayoutModule
+  // ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
