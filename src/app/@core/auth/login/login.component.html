@@ -1,23 +1,48 @@
 <div
+  class="container"
   fxLayout="row"
   fxFill
   fxLayoutAlign="space-around center"
   >
   <div fxFlex="90%">
-    <mat-card color="primary">
-      <mat-card-title>
-        <h2>Login</h2>
-      </mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h2>Login</h2>
+            </mat-card-title>
+          </mat-card-header>
 
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput placeholder="Username" />
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Password" />
-        </mat-form-field>
-      </mat-card-content>
-    </mat-card>
+          <mat-card-content>
+            <mat-form-field class="form-field" color="primary">
+              <mat-placeholder>
+                <mat-icon matPrefix>face</mat-icon>
+                Enter your username
+              </mat-placeholder>
+              <input matInput formControlName="username" />
+              <mat-hint>* required</mat-hint>
+              <mat-error *ngIf="submitted && form.username.errors">
+                Username is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-field">
+              <mat-placeholder>
+                <mat-icon matPrefix>lock</mat-icon>
+                Enter your password
+              </mat-placeholder>
+              <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{ hide ? 'visibility' : 'visibility_off' }}
+              </mat-icon>
+              <mat-hint>* required</mat-hint>
+              <mat-error *ngIf="submitted && form.password.errors">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+        </mat-card>
+    </form>
   </div>
 </div>
 
