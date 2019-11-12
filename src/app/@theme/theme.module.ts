@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ThemeComponent } from './theme.component';
 import { ThemeMaterialModule } from './theme-material.module';
@@ -12,6 +13,7 @@ import { ThemeMaterialModule } from './theme-material.module';
   ],
   imports: [
     CommonModule,
+    FlexLayoutModule,
     ThemeMaterialModule
   ],
   exports: [

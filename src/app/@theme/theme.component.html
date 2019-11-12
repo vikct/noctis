@@ -19,8 +19,16 @@
       <p>test</p>
     </mat-sidenav>
 
-    <mat-sidenav-content class="sidenav-content">
-      <ng-content select="router-outlet"></ng-content>
+    <mat-sidenav-content>
+      <div
+        fxLayout="row"
+        fxFill
+        fxLayoutAlign="center space-around"
+        >
+        <div fxFlex="95%">
+          <ng-content select="router-outlet"></ng-content>
+        </div>
+      </div>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
