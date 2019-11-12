@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private authService: AuthenticationService
+    private authenticationService: AuthenticationService
   ) { }
 
   canActivate(
@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    const currentUser = this.authService.currentUserValue;
+    const currentUser = this.authenticationService.currentUserValue;
     if (currentUser) {
       if (next.data.roles && next.data.roles.indexOf(currentUser.role) === -1) {
         this.router.navigate(['/']);

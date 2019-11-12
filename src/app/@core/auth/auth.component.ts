@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       fxFill
       fxLayoutAlign="space-around center"
       >
-      <div fxFlex="90%">
+      <div fxFlex="95%">
         <router-outlet></router-outlet>
       </div>
     </div>

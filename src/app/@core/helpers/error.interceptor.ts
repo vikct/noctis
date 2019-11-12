@@ -27,7 +27,7 @@ import { AuthenticationService } from '../services/authentication.service';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(
-    private authService: AuthenticationService
+    private authenticationService: AuthenticationService
   ) { }
 
   intercept(
@@ -36,10 +36,10 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
       if ([401, 403].indexOf(err.status) !== -1) {
-        this.authService.logout();
+        this.authenticationService.logout();
         location.reload();
       } else if ([404].indexOf(err.status) !== -1) {
-        
+
       }
 
       const error = err.error.message || err.statusText;

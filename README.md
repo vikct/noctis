@@ -43,7 +43,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate module pages --route pages --module app.module
 - ng generate component @core/components/not-found --module core
 - npm install --save @auth0/angular-jwt
-- ng generate service @core/services
+- ng generate service @core/services/authentication
 
 - ng generate guard @core/helpers/auth --skipTests
 - ng generate guard @core/helpers/role --skipTests
@@ -51,7 +51,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ng generate module @core/auth --route auth --module app.module
 - ng generate component @core/auth/login --module auth.module
-- ng generate service @core/auth/services/login
+- ng generate service @core/services/login
 - ng generate module pages/demos --route pages --module pages.module
 
 - ng generate module pages/[page name] --route [page name] --module pages.module
