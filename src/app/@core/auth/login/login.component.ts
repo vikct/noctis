@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  logjn() {
+  login() {
     this.submitted = true;
 
     // stop here if form is invalid
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
           this.snackBar.open('Login failed', 'DISMISS', { duration: 3000 });
           this.loading = false;
         }
-      )
+      );
   }
 
 }

@@ -4,15 +4,18 @@ import { Component } from '@angular/core';
   selector: 'app-auth',
   template: `
     <div
-      class="auth-container"
+      fxLayout="row"
+      fxFill
+      fxLayoutAlign="space-around center"
       >
-      <router-outlet></router-outlet>
+      <div fxFlex="90%">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   `,
   styles: [`
     .auth-container {
-      margin: 20px;
-      height:94.5vh;
+
     }
   `]
 })
