@@ -53,6 +53,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate component @core/auth/login --module auth.module
 - ng generate service @core/services/login
 - ng generate module pages/demos --route pages --module pages.module
+- ng generate module pages/settings --route settings --module pages.module
+- ng generate component pages/settings/user --module settings.module
+- ng generate component pages/settings/app --module settings.module
 
 - ng generate module pages/[page name] --route [page name] --module pages.module
 

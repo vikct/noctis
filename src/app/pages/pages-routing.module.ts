@@ -14,12 +14,23 @@ const routes: Routes = [
           .then(m => m.DemosModule)
       },
       {
+        path: 'pages',
+        loadChildren: () => import('./dashboard/dashboard.module')
+          .then(m => m.DashboardModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('./settings/settings.module')
+          .then(m => m.SettingsModule)
+      },
+      {
         path: '',
         redirectTo: 'demos',
         pathMatch: 'full',
       }
     ]
   }
+
 ];
 
 @NgModule({

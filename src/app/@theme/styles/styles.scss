@@ -12,30 +12,30 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$noctis-primary: mat-palette($mat-gray, 700, 600, 800);
-$noctis-accent: mat-palette($mat-amber, A200, A100, A400);
-$noctis-background-color: map_get($mat-grey, 800);
+$lucis-primary: mat-palette($mat-gray, 700, 600, 800);
+$lucis-accent: mat-palette($mat-amber, A200, A100, A400);
+$lucis-background-color: map_get($mat-grey, 800);
 
 // The warn palette is optional (defaults to red).
-$noctis-warn: mat-palette($mat-red);
+$lucis-warn: mat-palette($mat-red);
 
-$lunafreya-primary: mat-palette($mat-yellow, 50);
-$lunafreya-accent: mat-palette($mat-amber, A200, A100, A400);
+$tenebrae-primary: mat-palette($mat-yellow, 50);
+$tenebrae-accent: mat-palette($mat-amber, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$lunafreya-warn: mat-palette($mat-red);
+$tenebrae-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$noctis-theme: mat-dark-theme($noctis-primary, $noctis-accent, $noctis-warn);
-$lunafreya-theme: mat-light-theme($lunafreya-primary, $lunafreya-accent, $lunafreya-warn);
+$lucis-theme: mat-dark-theme($lucis-primary, $lucis-accent, $lucis-warn);
+$tenebrae-theme: mat-light-theme($tenebrae-primary, $tenebrae-accent, $tenebrae-warn);
 
-$background: map-get($noctis-theme, background);
-$background: map_merge($background, (background: $noctis-background-color));
-$noctis-theme: map_merge($noctis-theme, (background: $background));
+$background: map-get($lucis-theme, background);
+$background: map_merge($background, (background: $lucis-background-color));
+$lucis-theme: map_merge($lucis-theme, (background: $background));
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($noctis-theme);
+@include angular-material-theme($lucis-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
