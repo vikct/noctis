@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
   HttpClientModule,
-  HTTP_INTERCEPTORS
+  // HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -19,13 +19,13 @@ const COMPONENTS = [];
 
 const SERVICES = [];
 
-const INTERCEPTORS = [
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: "",
-    multi: true
-  }
-];
+// const INTERCEPTORS = [
+//   {
+//     provide: HTTP_INTERCEPTORS,
+//     useClass: "",
+//     multi: true
+//   }
+// ];
 
 @NgModule({
   declarations: [
