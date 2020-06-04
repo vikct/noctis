@@ -21,7 +21,7 @@ import { ThemeMaterialModule } from './theme-material.module';
   ]
 })
 export class ThemeModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ThemeModule> {
     return {
       ngModule: ThemeModule,
       providers: [
