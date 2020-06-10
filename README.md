@@ -44,6 +44,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate component @core/components/not-found --module core
 - npm install --save @auth0/angular-jwt
 - ng generate service @core/services/authentication
+- ng generate service @theme/theme
+- ng generate service @theme/ui-style-toggle
 
 - ng generate guard @core/helpers/auth --skipTests
 - ng generate guard @core/helpers/role --skipTests

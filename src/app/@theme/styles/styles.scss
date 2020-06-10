@@ -37,6 +37,10 @@ $lucis-theme: map_merge($lucis-theme, (background: $background));
 // that you are using.
 @include angular-material-theme($lucis-theme);
 
+.tenebrae {
+  @include angular-material-theme($tenebrae-theme);
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
