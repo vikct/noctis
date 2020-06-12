@@ -26,6 +26,7 @@
     "@spectrum-css/button": "^2.2.0",
     "@spectrum-css/page": "^2.0.7",
     "@spectrum-css/vars": "^2.3.0",
+    "flexiblegrid": "^1.2.2",
     "material-design-icons": "^3.0.1",
     "rxjs": "~6.5.5",
     "tslib": "^1.13.0",
