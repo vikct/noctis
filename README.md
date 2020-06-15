@@ -72,3 +72,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Food for thoughts
 - https://www.npmjs.com/package/@rxweb/reactive-form-validators
 - https://blog.techbridge.cc/2018/10/13/pwa-in-action/
+- https://stackoverflow.com/questions/51887581/angular-routing-not-working-on-netlify-on-page-refresh
