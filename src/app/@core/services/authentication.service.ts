@@ -13,16 +13,16 @@ const CONTROLLER = '/authentication';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
+    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.user = this.userSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
-    return this.currentUserSubject.value;
+  public get userValue(): User {
+    return this.userSubject.value;
   }
 
   // isLoggedIn(): Observable<boolean> {
@@ -41,7 +41,7 @@ export class AuthenticationService {
         // store user details and jwt token in local storage
         // to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        this.userSubject.next(user);
         return user;
       }));
   }
@@ -49,6 +49,6 @@ export class AuthenticationService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
+    this.userSubject.next(null);
   }
 }

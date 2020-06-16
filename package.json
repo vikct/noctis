@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "^9.1.11",
     "@angular/router": "^9.1.11",
     "@auth0/angular-jwt": "^3.0.1",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@spectrum-css/button": "^2.2.0",
     "@spectrum-css/page": "^2.0.7",
     "@spectrum-css/vars": "^2.3.0",

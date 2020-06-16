@@ -36,7 +36,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page (OPTIONAL)
 - npm install bootstrap (OPTIONAL)
 - npm install flexiblegrid
-
+- npm install @ngx-translate/core
+- npm install @ngx-translate/http-loader
 
 ### Create core functionalities
 - ng generate module @core/core --module=app --flat
