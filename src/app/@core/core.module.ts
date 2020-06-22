@@ -1,16 +1,16 @@
 import {
-  NgModule,
-  ModuleWithProviders,
-  Optional,
-  SkipSelf
-} from '@angular/core';
+  NgModule, ModuleWithProviders, Optional, SkipSelf,
+  APP_INITIALIZER
+ } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  HttpClientModule,
+import { HttpClientModule, HttpClient,
   // HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
@@ -18,6 +18,21 @@ import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
 const COMPONENTS = [];
 
 const SERVICES = [];
+
+const MODULES = [
+  CommonModule,
+  RouterModule,
+  HttpClientModule,
+  FlexLayoutModule,
+  TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+    },
+    isolate: false
+  })
+];
 
 // const INTERCEPTORS = [
 //   {
@@ -27,19 +42,22 @@ const SERVICES = [];
 //   }
 // ];
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/i18n', 'json');
+}
+
 @NgModule({
   declarations: [
     NotFoundComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    FlexLayoutModule
+    ...MODULES
   ],
-  // exports: [
-  //   FlexLayoutModule
-  // ]
+  exports: [
+    // FlexLayoutModule
+    TranslateModule
+  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -51,8 +69,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...SERVICES,
-        // ...INTERCEPTORS
       ]
-    } as ModuleWithProviders;
+    };
   }
 }

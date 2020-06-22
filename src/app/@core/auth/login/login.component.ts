@@ -1,19 +1,10 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Router,
-  ActivatedRoute
-} from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -33,9 +24,16 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private snackBar: MatSnackBar,
+    public translate: TranslateService,
     private authenticationService: AuthenticationService,
-    private snackBar: MatSnackBar
-  ) { }
+  ) {
+    translate.addLangs(['en-US', 'zh-CN']);
+    translate.setDefaultLang('en-US');
+
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en-US|zh-CN/) ? browserLang : 'en-US');
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({

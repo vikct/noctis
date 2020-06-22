@@ -1,10 +1,10 @@
 # Noctis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
+- Core module: handles singletons
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4210/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4211/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -57,6 +57,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate module @core/auth --route auth --module app.module
 - ng generate component @core/auth/login --module auth.module
 - ng generate service @core/services/login
+- ng generate service @core/services/translation
 - ng generate module pages/demos --route pages --module pages.module
 - ng generate module pages/settings --route settings --module pages.module
 - ng generate component pages/settings/user --module settings.module
@@ -74,3 +75,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://www.npmjs.com/package/@rxweb/reactive-form-validators
 - https://blog.techbridge.cc/2018/10/13/pwa-in-action/
 - https://stackoverflow.com/questions/51887581/angular-routing-not-working-on-netlify-on-page-refresh
+- https://stackoverflow.com/questions/53413612/ngx-translate-with-shared-lazy-loading-modules
