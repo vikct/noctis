@@ -5,10 +5,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ThemeComponent } from './theme.component';
 import { ThemeMaterialModule } from './theme-material.module';
+import { TransferendumComponent } from './components/transferendum.component';
 
 @NgModule({
   declarations: [
     ThemeComponent,
+    TransferendumComponent,
     // LayoutComponent
   ],
   imports: [
@@ -27,6 +29,6 @@ export class ThemeModule {
       providers: [
 
       ]
-    } as ModuleWithProviders;
+    };
   }
 }

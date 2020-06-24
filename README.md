@@ -38,13 +38,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - npm install flexiblegrid
 - npm install @ngx-translate/core
 - npm install @ngx-translate/http-loader
+- ng add @ngneat/transloco
 
 ### Create core functionalities
 - ng generate module @core/core --module=app --flat
 - ng generate module @theme/theme --module=app --flat
 - ng generate component @theme/theme --flat --module=theme 
 - ng generate module pages --route pages --module app.module
-- ng generate component @core/components/not-found --module core
+- ng generate component @theme/components/not-found --inlineTemplate --inlineStyle --flat --module theme
+- ng generate component @theme/components/transferendum --inlineTemplate --inlineStyle --flat --module theme
 - npm install --save @auth0/angular-jwt
 - ng generate service @core/services/authentication
 - ng generate service @theme/theme
@@ -57,7 +59,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate module @core/auth --route auth --module app.module
 - ng generate component @core/auth/login --module auth.module
 - ng generate service @core/services/login
-- ng generate service @core/services/translation
+- ng generate service @core/services/transferendum
 - ng generate module pages/demos --route pages --module pages.module
 - ng generate module pages/settings --route settings --module pages.module
 - ng generate component pages/settings/user --module settings.module
