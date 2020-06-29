@@ -14,16 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 @NgModule({
   declarations: [AuthComponent, LoginComponent],
   imports: [
@@ -31,7 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthRoutingModule,
 
     ReactiveFormsModule,
-
+    TranslocoModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -41,15 +34,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule,
     MatSnackBarModule,
 
-    FlexLayoutModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-      isolate: false
-    })
+    FlexLayoutModule
+  ],
+  providers: [
+    {
+      provide: TRANSLOCO_SCOPE,
+      useValue: ''
+    }
   ]
 })
 export class AuthModule { }

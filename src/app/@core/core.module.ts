@@ -5,34 +5,30 @@ import { HttpClientModule, HttpClient,
   // HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-// import { TransferendumService } from './services/transferendum.service';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from '../@theme/components/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
+import { httpLoader } from './helpers/http-loader';
+import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
 
-// const SERVICES = [
-//   {
-//     provide: APP_INITIALIZER,
-//     useFactory: TransferendumServiceFactory,
-//     deps: [TransferendumService],
-//     multi: true
-//   }
-// ];
+const SERVICES = [
+  httpLoader,
+  {
+    provide: TRANSLOCO_CONFIG,
+    useValue: {
+      availableLangs: ['en-US', 'zh-CN'],
+      reRenderOnLangChange: true,
+      fallbackLang: 'zh-CN',
+      defaultLang: 'en-US'
+    } as TranslocoConfig
+  }
+];
 
 const MODULES = [
   CommonModule,
   RouterModule,
   HttpClientModule,
   FlexLayoutModule,
-  TranslateModule.forRoot({
-    loader: {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
-    },
-    isolate: false
-  })
+  TranslocoModule
 ];
 
 // const INTERCEPTORS = [
@@ -42,11 +38,6 @@ const MODULES = [
 //     multi: true
 //   }
 // ];
-
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
-}
 
 // export function TransferendumServiceFactory(transferendumService: TransferendumService) {
 //   return () => transferendumService.load();
@@ -61,7 +52,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   exports: [
     // FlexLayoutModule
-    TranslateModule
   ]
 })
 export class CoreModule {
@@ -73,7 +63,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        // ...SERVICES,
+        ...SERVICES,
       ]
     };
   }

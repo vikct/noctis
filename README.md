@@ -35,9 +35,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - npm install --save material-design-icons
 - npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page (OPTIONAL)
 - npm install bootstrap (OPTIONAL)
-- npm install flexiblegrid
-- npm install @ngx-translate/core
-- npm install @ngx-translate/http-loader
+- npm install flexiblegrid (OPTIONAL)
 - ng add @ngneat/transloco
 
 ### Create core functionalities

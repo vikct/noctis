@@ -3,9 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from '../../services/authentication.service';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-login',
@@ -25,15 +24,9 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private snackBar: MatSnackBar,
-    public translate: TranslateService,
     private authenticationService: AuthenticationService,
-  ) {
-    translate.addLangs(['en-US', 'zh-CN']);
-    translate.setDefaultLang('en-US');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en-US|zh-CN/) ? browserLang : 'en-US');
-  }
+    private translocoService: TranslocoService
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -44,6 +37,10 @@ export class LoginComponent implements OnInit {
     // get return url from route parameters or default to '/'
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
+
+    this.translocoService
+      .selectTranslate('', {}, '')
+      .subscribe(console.log);
   }
 
   // convenience getter for easy access to form fields

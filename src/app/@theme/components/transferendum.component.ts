@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-transferendum',
@@ -26,17 +26,11 @@ export class TransferendumComponent {
   };
 
   constructor(
-    private _translate: TranslateService
-  ) {
-    _translate.addLangs(['en-US', 'zh-CN']);
-    _translate.setDefaultLang('en-US');
-
-    const browserLang = navigator.language;
-    _translate.use(browserLang.match(/en-US|zh-CN/) ? browserLang : 'en-US');
-  }
+    private _translate: TranslocoService
+  ) { }
 
   useLanguage(language: string) {
-    this._translate.use(language);
+    this._translate.setActiveLang(language);
   }
 
 }
