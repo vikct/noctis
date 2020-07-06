@@ -1,6 +1,8 @@
 # Noctis
 
 - Core module: handles singletons
+- Theme module: handles UI
+- Page module: handles the rest of the features in the app
 
 ## Development server
 
@@ -37,6 +39,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - npm install bootstrap (OPTIONAL)
 - npm install flexiblegrid (OPTIONAL)
 - ng add @ngneat/transloco
+- npm install ng-http-loader --save / yarn add ng-http-loader (STUDYING)
 
 ### Create core functionalities
 - ng generate module @core/core --module=app --flat
@@ -76,3 +79,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://blog.techbridge.cc/2018/10/13/pwa-in-action/
 - https://stackoverflow.com/questions/51887581/angular-routing-not-working-on-netlify-on-page-refresh
 - https://stackoverflow.com/questions/53413612/ngx-translate-with-shared-lazy-loading-modules
+- https://medium.com/better-programming/fantastic-translations-and-where-to-find-them-421ee46f59db
+- https://medium.com/@TuiZ/how-to-split-your-i18n-file-per-lazy-loaded-module-with-ngx-translate-3caef57a738f
