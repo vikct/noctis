@@ -18,7 +18,7 @@ import { ThemeMaterialModule } from './theme-material.module';
     ThemeMaterialModule
   ],
   exports: [
-    // ThemeComponent
+    ThemeComponent
   ]
 })
 export class ThemeModule {
