@@ -8,19 +8,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from '../@theme/components/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
 import { httpLoader } from './helpers/http-loader';
-import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
+import { TranslocoRootModule } from './transloco-root.module';
+// import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
 
 const SERVICES = [
   httpLoader,
-  {
-    provide: TRANSLOCO_CONFIG,
-    useValue: {
-      availableLangs: ['en-US', 'zh-CN'],
-      reRenderOnLangChange: true,
-      fallbackLang: 'zh-CN',
-      defaultLang: 'en-US'
-    } as TranslocoConfig
-  }
+  // {
+  //   provide: TRANSLOCO_CONFIG,
+  //   useValue: {
+  //     availableLangs: ['en-US', 'zh-CN'],
+  //     reRenderOnLangChange: true,
+  //     fallbackLang: 'zh-CN',
+  //     defaultLang: 'en-US'
+  //   } as TranslocoConfig
+  // }
 ];
 
 const MODULES = [
@@ -28,7 +29,8 @@ const MODULES = [
   RouterModule,
   HttpClientModule,
   FlexLayoutModule,
-  TranslocoModule
+  // TranslocoModule
+  TranslocoRootModule
 ];
 
 // const INTERCEPTORS = [

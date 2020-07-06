@@ -25,9 +25,7 @@ export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {
     return {
       ngModule: ThemeModule,
-      providers: [
-
-      ]
+      providers: []
     };
   }
 }
