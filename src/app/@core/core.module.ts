@@ -7,30 +7,16 @@ import { HttpClientModule, HttpClient,
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from '../@theme/components/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
-import { httpLoader } from './helpers/http-loader';
-import { TranslocoRootModule } from './transloco-root.module';
-// import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
 
 const SERVICES = [
-  httpLoader,
-  // {
-  //   provide: TRANSLOCO_CONFIG,
-  //   useValue: {
-  //     availableLangs: ['en-US', 'zh-CN'],
-  //     reRenderOnLangChange: true,
-  //     fallbackLang: 'zh-CN',
-  //     defaultLang: 'en-US'
-  //   } as TranslocoConfig
-  // }
+
 ];
 
 const MODULES = [
   CommonModule,
   RouterModule,
   HttpClientModule,
-  FlexLayoutModule,
-  // TranslocoModule
-  TranslocoRootModule
+  FlexLayoutModule
 ];
 
 // const INTERCEPTORS = [
@@ -40,10 +26,6 @@ const MODULES = [
 //     multi: true
 //   }
 // ];
-
-// export function TransferendumServiceFactory(transferendumService: TransferendumService) {
-//   return () => transferendumService.load();
-// }
 
 @NgModule({
   declarations: [

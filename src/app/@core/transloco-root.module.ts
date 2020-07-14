@@ -15,7 +15,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 
   getTranslation(lang: string) {
-    console.log(lang);
+    console.log('getTranslation: ', lang);
     return this.http.get<Translation>(`/assets/i18n/${lang}.json`);
   }
 }
@@ -31,6 +31,9 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: environment.production,
+        flatten: {
+          aot: environment.production
+        }
       })
     },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }

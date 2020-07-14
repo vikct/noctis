@@ -15,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [AuthComponent, LoginComponent],
@@ -24,7 +23,6 @@ import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
     AuthRoutingModule,
 
     ReactiveFormsModule,
-    TranslocoModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -38,7 +36,8 @@ import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
   ],
   providers: [
     {
-      provide: TRANSLOCO_SCOPE,
+      // provide: TRANSLOCO_SCOPE,
+      provide: '',
       useValue: ''
     }
   ]
