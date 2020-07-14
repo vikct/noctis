@@ -5,7 +5,7 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
-import { NotFoundComponent } from './@core/components/not-found/not-found.component';
+import { NotFoundComponent } from './@theme/components/not-found.component';
 
 
 const routes: Routes = [

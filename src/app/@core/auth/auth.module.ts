@@ -12,8 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -23,16 +23,23 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AuthRoutingModule,
 
     ReactiveFormsModule,
-
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
     MatSnackBarModule,
 
     FlexLayoutModule
+  ],
+  providers: [
+    {
+      // provide: TRANSLOCO_SCOPE,
+      provide: '',
+      useValue: ''
+    }
   ]
 })
 export class AuthModule { }

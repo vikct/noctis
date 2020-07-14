@@ -1,10 +1,12 @@
 # Noctis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
+- Core module: handles singletons
+- Theme module: handles UI
+- Page module: handles the rest of the features in the app
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4210/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4211/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -35,16 +37,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - npm install --save material-design-icons
 - npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page (OPTIONAL)
 - npm install bootstrap (OPTIONAL)
-- npm install flexiblegrid
-- npm install @ngx-translate/core
-- npm install @ngx-translate/http-loader
+- npm install flexiblegrid (OPTIONAL)
+- ng add @ngneat/transloco
+- npm install ng-http-loader --save / yarn add ng-http-loader (STUDYING)
 
 ### Create core functionalities
 - ng generate module @core/core --module=app --flat
 - ng generate module @theme/theme --module=app --flat
 - ng generate component @theme/theme --flat --module=theme 
 - ng generate module pages --route pages --module app.module
-- ng generate component @core/components/not-found --module core
+- ng generate component @theme/components/not-found --inlineTemplate --inlineStyle --flat --module theme
+- ng generate component @theme/components/transferendum --inlineTemplate --inlineStyle --flat --module theme
 - npm install --save @auth0/angular-jwt
 - ng generate service @core/services/authentication
 - ng generate service @theme/theme
@@ -57,6 +60,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate module @core/auth --route auth --module app.module
 - ng generate component @core/auth/login --module auth.module
 - ng generate service @core/services/login
+- ng generate service @core/services/transferendum
 - ng generate module pages/demos --route pages --module pages.module
 - ng generate module pages/settings --route settings --module pages.module
 - ng generate component pages/settings/user --module settings.module
@@ -74,3 +78,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://www.npmjs.com/package/@rxweb/reactive-form-validators
 - https://blog.techbridge.cc/2018/10/13/pwa-in-action/
 - https://stackoverflow.com/questions/51887581/angular-routing-not-working-on-netlify-on-page-refresh
+- https://stackoverflow.com/questions/53413612/ngx-translate-with-shared-lazy-loading-modules
+- https://medium.com/better-programming/fantastic-translations-and-where-to-find-them-421ee46f59db
+- https://medium.com/@TuiZ/how-to-split-your-i18n-file-per-lazy-loaded-module-with-ngx-translate-3caef57a738f
