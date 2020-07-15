@@ -81,3 +81,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://stackoverflow.com/questions/53413612/ngx-translate-with-shared-lazy-loading-modules
 - https://medium.com/better-programming/fantastic-translations-and-where-to-find-them-421ee46f59db
 - https://medium.com/@TuiZ/how-to-split-your-i18n-file-per-lazy-loaded-module-with-ngx-translate-3caef57a738f
+- https://stackoverflow.com/questions/58354348/windows-10-npx-create-react-app-myapp-command-does-not-work-because-of-whit
