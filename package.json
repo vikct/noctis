@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4211",
+    "start:augury": "ng serve --port 4211 --configuration augury",
     "build": "ng build",
     "test": "ng test",
     "lint": "eslint -c .eslintrc.js --ext .ts noctis",
