@@ -5,7 +5,7 @@ import { TranslocoService } from '@ngneat/transloco';
   selector: 'app-transferendum',
   template: `
     <button mat-icon-button class="matero-toolbar-button" [matMenuTriggerFor]="menu">
-      <mat-icon>translate</mat-icon>
+      <mat-icon color="accent">translate</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">

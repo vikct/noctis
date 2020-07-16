@@ -1,5 +1,6 @@
 {
   "login": {
-    "title": "登入"
+    "title": "请登入",
+    "login": "登入"
   }
 }
