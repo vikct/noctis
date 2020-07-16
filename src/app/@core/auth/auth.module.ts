@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [AuthComponent, LoginComponent],
@@ -32,12 +33,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatSnackBarModule,
 
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslocoModule
   ],
   providers: [
     {
-      // provide: TRANSLOCO_SCOPE,
-      provide: '',
+      provide: TRANSLOCO_SCOPE,
       useValue: ''
     }
   ]

@@ -26,11 +26,11 @@ export class TransferendumComponent {
   };
 
   constructor(
-    // private _translate: TranslocoService
+    private _translate: TranslocoService
   ) { }
 
   useLanguage(language: string) {
-    // this._translate.setActiveLang(language);
+    this._translate.setActiveLang(language);
   }
 
 }

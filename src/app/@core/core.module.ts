@@ -7,6 +7,7 @@ import { HttpClientModule, HttpClient,
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from '../@theme/components/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
+import { TranslocoRootModule } from './transloco-root.module';
 
 const SERVICES = [
 
@@ -16,7 +17,8 @@ const MODULES = [
   CommonModule,
   RouterModule,
   HttpClientModule,
-  FlexLayoutModule
+  FlexLayoutModule,
+  TranslocoRootModule,
 ];
 
 // const INTERCEPTORS = [
