@@ -2,11 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 
 import { ThemeComponent } from './theme.component';
-import { TransferendumComponent } from './components/transferendum.component';
+import { TransferendumComponent } from '../@core/transferendum/transferendum.component';
 import { ThemeMaterialModule } from './theme-material.module';
-import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [
