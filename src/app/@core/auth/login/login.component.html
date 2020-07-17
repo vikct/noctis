@@ -3,10 +3,9 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-        <h2>Login</h2>
-        <!-- <ng-container *transloco="let translate">
+        <ng-container *transloco="let translate">
           <h2>{{ translate('login.title') }}</h2>
-        </ng-container> -->
+        </ng-container>
       </mat-card-title>
       <!-- <select #langSelect (change)="translate.use(langSelect.value)">
         <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
@@ -46,11 +45,9 @@
           color="accent"
           [disabled]="loading"
           align="right">
-          Login
-          <!-- {{ 'login.title' | translate }} -->
-          <!-- <ng-container *transloco="let translate">
-            {{ translate('login.title') }}
-          </ng-container> -->
+          <ng-container *transloco="let translate">
+            {{ translate('login.login') }}
+          </ng-container>
             <!-- [disabled]="loading || !(f.username.value && f.password.value)" -->
         </button>
       </div>

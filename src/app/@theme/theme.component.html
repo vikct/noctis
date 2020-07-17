@@ -4,7 +4,6 @@
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon color="accent">menu</mat-icon>
       </button>
-
       <h2>Noctis</h2>
       <span class="sidenav-spacer"></span>
       <!-- <mat-slide-toggle [checked]="isThemeLight | async" (change)="toggleLightTheme($event.checked)">Tenebrae</mat-slide-toggle> -->
@@ -21,7 +20,12 @@
   <mat-sidenav-container class="sidenav-container">
 
     <mat-sidenav #drawer mode="push">
-      <p>test</p>
+
+      <a routerLink="/auth/login" mat-button>
+        <ng-container *transloco="let translate">
+          {{ translate('login.login') }}
+        </ng-container>
+      </a>
     </mat-sidenav>
 
     <mat-sidenav-content>
