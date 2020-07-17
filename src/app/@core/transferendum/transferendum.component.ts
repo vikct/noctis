@@ -4,12 +4,12 @@ import { TranslocoService } from '@ngneat/transloco';
 @Component({
   selector: 'app-transferendum',
   template: `
-    <button mat-icon-button class="matero-toolbar-button" [matMenuTriggerFor]="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon color="accent">translate</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngFor="let lang of langs | keyvalue" (click)="useLanguage(lang.key)">
+      <button mat-menu-item *ngFor="let lang of languages | keyvalue" (click)="useLanguage(lang.key)">
         <span>{{ lang.value }}</span>
       </button>
     </mat-menu>
@@ -19,7 +19,7 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class TransferendumComponent {
 
-  langs = {
+  languages = {
     'en-US': 'English',
     'zh-CN': '中文简体',
     // 'zh-TW': '中文繁体',
