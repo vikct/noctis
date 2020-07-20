@@ -8,7 +8,7 @@ import { TranslocoService } from '@ngneat/transloco';
 @Component({
   selector: 'app-theme',
   templateUrl: './theme.component.html',
-  styleUrls: ['./theme.component.scss']
+  // styleUrls: ['./theme.component.scss']
 })
 export class ThemeComponent implements OnInit {
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { SplashScreenService } from './@core/services/splash-screen.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
     </div>
     `
 })
-export class AppComponent { }
+export class AppComponent implements OnInit, AfterViewInit {
+  constructor(private splashScreen: SplashScreenService) { }
+
+  ngOnInit() { }
+
+  ngAfterViewInit() {
+    this.splashScreen.hide();
+  }
+}

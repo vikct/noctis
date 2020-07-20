@@ -50,6 +50,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate component @theme/components/transferendum --inlineTemplate --inlineStyle --flat --module theme
 - npm install --save @auth0/angular-jwt
 - ng generate service @core/services/authentication
+- ng generate service @core/services/splash-screen
 - ng generate service @theme/theme
 - ng generate service @theme/ui-style-toggle
 
