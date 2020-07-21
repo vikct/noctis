@@ -20,12 +20,7 @@
   <mat-sidenav-container class="sidenav-container" autosize autoFocus>
 
     <mat-sidenav #drawer mode="push">
-
-      <a routerLink="/auth/login" mat-button>
-        <ng-container *transloco="let translate">
-          {{ translate('login.login') }}
-        </ng-container>
-      </a>
+      <app-sidebar></app-sidebar>
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
