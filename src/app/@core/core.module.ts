@@ -1,23 +1,23 @@
-import {
-  NgModule,
-  ModuleWithProviders,
-  Optional,
-  SkipSelf
-} from '@angular/core';
+import { NgModule, ModuleWithProviders, Optional, SkipSelf, APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  HttpClientModule,
+import { HttpClientModule, HttpClient,
   // HTTP_INTERCEPTORS
 } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from '../@theme/components/not-found.component';
 import { throwIfAlreadyLoaded } from './helpers/module-import.guard';
+import { TranslocoRootModule } from './transferendum/transloco-root.module';
 
-const COMPONENTS = [];
+const SERVICES = [
 
-const SERVICES = [];
+];
+
+const MODULES = [
+  CommonModule,
+  RouterModule,
+  HttpClientModule,
+  TranslocoRootModule,
+];
 
 // const INTERCEPTORS = [
 //   {
@@ -31,15 +31,10 @@ const SERVICES = [];
   declarations: [
     NotFoundComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    FlexLayoutModule
-  ],
-  // exports: [
-  //   FlexLayoutModule
-  // ]
+  imports: [...MODULES],
+  exports: [
+    // FlexLayoutModule
+  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -51,8 +46,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...SERVICES,
-        // ...INTERCEPTORS
       ]
-    } as ModuleWithProviders;
+    };
   }
 }

@@ -1,20 +1,10 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Router,
-  ActivatedRoute
-} from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
-import { first } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first, filter } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 import { AuthenticationService } from '../../services/authentication.service';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-login',
@@ -33,8 +23,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private snackBar: MatSnackBar,
     private authenticationService: AuthenticationService,
-    private snackBar: MatSnackBar
+    private translocoService: TranslocoService
   ) { }
 
   ngOnInit() {
@@ -46,6 +37,11 @@ export class LoginComponent implements OnInit {
     // get return url from route parameters or default to '/'
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
+
+
+    // this.translocoService
+    //   .selectTranslate('', {}, '')
+    //   .subscribe(console.log);
   }
 
   // convenience getter for easy access to form fields

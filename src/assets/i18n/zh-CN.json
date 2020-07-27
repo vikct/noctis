@@ -1,0 +1,11 @@
+{
+  "login": {
+    "title": "请登入",
+    "login": "登入"
+  },
+
+  "sidebar": {
+    "dashboard": "面板",
+    "settings": "设定"
+  }
+}

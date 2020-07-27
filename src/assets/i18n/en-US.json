@@ -1,0 +1,11 @@
+{
+  "login": {
+    "title": "Please Login",
+    "login": "Login"
+  },
+
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "settings": "Settings"
+  }
+}

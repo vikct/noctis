@@ -1,13 +1,14 @@
-<div class="container" [ngClass]="{'tenebrae': isThemeLight | async}">
+<div class="container-wrap" [ngClass]="{'tenebrae': isThemeLight | async}">
   <mat-toolbar color="primary" class="toolbar mat-elevation-z8">
     <mat-toolbar-row>
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon color="accent">menu</mat-icon>
       </button>
-
       <h2>Noctis</h2>
+      <span fxFlex></span>
       <span class="sidenav-spacer"></span>
       <!-- <mat-slide-toggle [checked]="isThemeLight | async" (change)="toggleLightTheme($event.checked)">Tenebrae</mat-slide-toggle> -->
+      <app-transferendum></app-transferendum>
       <button mat-icon-button>
         <mat-icon color="accent">build</mat-icon>
       </button>
@@ -17,18 +18,20 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container" autosize autoFocus>
 
     <mat-sidenav #drawer mode="push">
-      <p>test</p>
+      <app-sidebar></app-sidebar>
     </mat-sidenav>
 
-    <mat-sidenav-content>
-      <div fxLayout="row" fxFill fxLayoutAlign="center space-around">
-        <div fxFlex="95%">
-          <ng-content select="router-outlet"></ng-content>
-        </div>
+    <mat-sidenav-content class="sidenav-content">
+      <!-- <div fxLayout="row" fxFill fxLayoutAlign="center space-around">
+        <div fxFlex="95%"> -->
+      <div class="content-wrap">
+        <ng-content select="router-outlet"></ng-content>
       </div>
+        <!-- </div>
+      </div> -->
     </mat-sidenav-content>
 
   </mat-sidenav-container>
