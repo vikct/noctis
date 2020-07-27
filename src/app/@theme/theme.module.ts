@@ -7,11 +7,13 @@ import { TRANSLOCO_SCOPE, TranslocoModule } from '@ngneat/transloco';
 import { ThemeComponent } from './theme.component';
 import { TransferendumComponent } from '../@core/transferendum/transferendum.component';
 import { ThemeMaterialModule } from './theme-material.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     ThemeComponent,
     TransferendumComponent,
+    SidebarComponent,
     // LayoutComponent
   ],
   imports: [
@@ -22,7 +24,7 @@ import { ThemeMaterialModule } from './theme-material.module';
     TranslocoModule
   ],
   exports: [
-    ThemeComponent
+    ThemeComponent,
   ]
 })
 export class ThemeModule {

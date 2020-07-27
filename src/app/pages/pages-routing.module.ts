@@ -14,7 +14,7 @@ const routes: Routes = [
           .then(m => m.DemosModule)
       },
       {
-        path: 'pages',
+        path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module')
           .then(m => m.DashboardModule)
       },

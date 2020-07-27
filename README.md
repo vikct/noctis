@@ -46,8 +46,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate module @theme/theme --module=app --flat
 - ng generate component @theme/theme --flat --module=theme 
 - ng generate module pages --route pages --module app.module
+- ng generate component @theme/components/layout --module theme
 - ng generate component @theme/components/not-found --inlineTemplate --inlineStyle --flat --module theme
 - ng generate component @theme/components/transferendum --inlineTemplate --inlineStyle --flat --module theme
+- ng generate component @theme/components/sidebar --skipTest --module theme
 - npm install --save @auth0/angular-jwt
 - ng generate service @core/services/authentication
 - ng generate service @core/services/splash-screen
