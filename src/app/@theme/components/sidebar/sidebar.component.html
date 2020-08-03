@@ -13,6 +13,12 @@
     </ng-container>
   </a>
 
+  <a mat-list-item routerLink="/pages/demos">
+    <ng-container *transloco="let translate">
+      {{ translate('sidebar.demo') }}
+    </ng-container>
+  </a>
+
   <a mat-list-item routerLink="/pages/settings">
     <ng-container *transloco="let translate">
       {{ translate('sidebar.settings') }}
