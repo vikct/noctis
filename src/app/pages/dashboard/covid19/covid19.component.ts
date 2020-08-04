@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 import {  interval, timer } from 'rxjs';
-import { flatMap } from 'rxjs/operators';
+import { flatMap, groupBy, map } from 'rxjs/operators';
 
 import { Covid19Service } from './covid19.service';
+import { Country,Documentation } from './interfaces/covid19.interface';
 
 @Component({
   selector: 'app-covid19',
@@ -11,26 +13,53 @@ import { Covid19Service } from './covid19.service';
 })
 export class Covid19Component implements OnInit {
 
+  countryControl = new FormControl('', Validators.required);
+  selectFormControl = new FormControl('', Validators.required);
+  countries: Country[];
+  docs: Documentation[];
+  displayedColumns: string[] = ['Name', 'Description', 'Path'];
+  dataSource = this.docs;
+
   constructor(private covid19Service: Covid19Service) {
 
     // interval(2*60*1000)
+    // timer(0, 2*60*1000)
     //   .pipe(
-    //     flatMap(() => this.covid19Service.getCountries())
+    //     flatMap(() => this.covid19Service.getCountries()),
+    //     map(data =>
+    //       data.sort((a, b) => a.Country.localeCompare(b.Country))
+    //     )
     //   )
-    //   .subscribe(data => console.log(data))
+    //   // .subscribe(data => console.log(data))
+    //   .subscribe(result => {
+    //     this.countries = result
+    //   })
+  }
 
-    timer(0, 2*60*1000)
-      .pipe(
-        flatMap(() => this.covid19Service.getCountries())
-      )
-      .subscribe(data => console.log(data))
+  getCountries() {
+    return this.covid19Service
+                .getCountries()
+                .pipe(
+                  map(data =>
+                    data.sort((a, b) => a.Country.localeCompare(b.Country))
+                  )
+                )
+                .subscribe(result => {
+                  this.countries = result
+                })
   }
 
   getDocumentation() {
-    
+    return this.covid19Service
+                .getDocumentation()
+                .subscribe(result => {
+                  this.docs = result
+                })
   }
 
   ngOnInit(): void {
+    this.getCountries();
+    this.getDocumentation();
   }
 
 }
