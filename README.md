@@ -70,6 +70,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate component pages/settings/app --module settings.module
 - ng generate module pages/forms --route forms --module pages.module
 
+- npm install echarts ngx-echarts
+
 - ng generate module pages/[page name] --route [page name] --module pages.module
 
 

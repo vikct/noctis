@@ -38,7 +38,7 @@ export class Covid19Component implements OnInit {
 
   getCountries() {
     return this.covid19Service
-                .getCountries()
+                .countriesRoute()
                 .pipe(
                   map(data =>
                     data.sort((a, b) => a.Country.localeCompare(b.Country))
@@ -51,14 +51,25 @@ export class Covid19Component implements OnInit {
 
   getDocumentation() {
     return this.covid19Service
-                .getDocumentation()
+                .allRoute()
                 .subscribe(result => {
                   this.docs = result
                 })
   }
 
   getValue(country: string) {
-    console.log("Country: " + country);
+    // interval(2*60*1000)
+    timer(0, 2*60*1000)
+      .pipe(
+        flatMap(() => this.covid19Service.countryDayOneRoute(country)),
+        map(data =>
+          data.sort((a, b) => a.Date.localeCompare(b.Date))
+        )
+      )
+      .subscribe(data => console.log(data))
+      // .subscribe(result => {
+      //   this.countries = result
+      // })
   }
 
   ngOnInit(): void {

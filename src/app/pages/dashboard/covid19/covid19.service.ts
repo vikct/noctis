@@ -7,13 +7,21 @@ import { map } from 'rxjs/operators';
 })
 export class Covid19Service {
 
+  url: string = 'https://api.covid19api.com';
+
   constructor(private http: HttpClient) { }
 
-  getDocumentation() {
-    return this.http.get<Documentation[]>('https://api.covid19api.com');
+  // Documentations
+  allRoute() {
+    return this.http.get<Documentation[]>(this.url);
   }
 
-  getCountries() {
-    return this.http.get<Country[]>('https://api.covid19api.com/countries');
+  // Countries
+  countriesRoute() {
+    return this.http.get<Country[]>(`${this.url}/countries`);
+  }
+
+  countryDayOneRoute(country: string) {
+    return this.http.get<any>(`${this.url}/dayone/country/${country}`);
   }
 }
