@@ -67,6 +67,7 @@ export class Covid19Component implements OnInit {
   }
 
   onChangeCountry(country: string) {
+    console.log('change country');
     this.covid19Service.countryDayOneRoute(country).subscribe(cases => {
       this.cases = cases;
       this.setOptions();
