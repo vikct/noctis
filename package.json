@@ -31,7 +31,7 @@
     "echarts": "^4.8.0",
     "flexiblegrid": "^1.2.2",
     "material-design-icons": "^3.0.1",
-    "ngx-echarts": "^5.1.0",
+    "ngx-echarts": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
