@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'demos',
+        redirectTo: 'dashboard',
         pathMatch: 'full',
       }
     ]
