@@ -57,6 +57,10 @@ export class Covid19Component implements OnInit {
                 })
   }
 
+  getValue(country: string) {
+    console.log("Country: " + country);
+  }
+
   ngOnInit(): void {
     this.getCountries();
     this.getDocumentation();
