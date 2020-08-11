@@ -29,13 +29,6 @@ export class Covid19Component implements OnInit {
   cases: CountryStatus[] = [];
   countrySummary: CountrySummary[] = [];
   test: saleData[] = [];
-  dummy = [
-    { name: "Mobiles", value: 105000 },
-    { name: "Laptop", value: 55000 },
-    { name: "AC", value: 15000 },
-    { name: "Headset", value: 150000 },
-    { name: "Fridge", value: 20000 }
-  ];
 
   constructor(private covid19Service: Covid19Service) {
     this.getCasesByCountry(this.selectedCountry);
@@ -80,10 +73,8 @@ export class Covid19Component implements OnInit {
   }
 
   onChangeCountry(country: string) {
-    console.log('change country');
     this.covid19Service.countryDayOneRoute(country).subscribe(cases => {
       this.cases = cases;
-      // this.setOptions();
     });
   }
 
@@ -122,12 +113,35 @@ export class Covid19Component implements OnInit {
   //   };
   // }
 
-  setOptions(list: CountrySummary[]) {
-
-    // this.countryCasesChartOptions = {
-    //   name: this.countrySummary.map(i => i.Country),
-    //   value: this.countrySummary.map(i => i.)
-    // }
+  setOptions(list) {
+    console.log(list);
+    this.test = list;
+    this.test = [
+      {
+        name: 'New Confirmed',
+        value: list.NewConfirmed
+      },
+      {
+        name: 'New Deaths',
+        value: list.NewDeaths
+      },
+      {
+        name: 'New Recovered',
+        value: list.NewRecovered
+      },
+      {
+        name: 'Total Confirmed',
+        value: list.TotalConfirmed
+      },
+      {
+        name: 'Total Deaths',
+        value: list.TotalDeaths
+      },
+      {
+        name: 'Total Recovered',
+        value: list.TotalRecovered
+      }
+    ]
   }
 
   getCountrySummary(country: string) {
@@ -135,54 +149,17 @@ export class Covid19Component implements OnInit {
     return this.covid19Service
               .summaryRoute()
               .pipe(
-                map(data =>
+                flatMap(data =>
                   this.countrySummary = data.Countries
                     .filter(filter =>
                       filter.Slug == country
                     ),
-                )
+                ),
               )
               .subscribe(result =>
-                console.log("result", result)
-                // this.test = [
-                //   {
-                //     name: 'NewConfirmed',
-                //     value: result.map(i=>i.NewConfirmed)
-                //   },
-                //   {
-                //     name: 'NewDeaths',
-                //     value: result.map(i=>i.NewDeaths)
-                //   },
-                //   {
-                //     name: 'NewRecovered',
-                //     value: result.map(i=>i.NewRecovered)
-                //   },
-                //   {
-                //     name: 'TotalConfirmed',
-                //     value: result.map(i=>i.TotalConfirmed)
-                //   },
-                //   {
-                //     name: 'TotalDeaths',
-                //     value: result.map(i=>i.TotalDeaths)
-                //   },
-                //   {
-                //     name: 'TotalRecovered',
-                //     value: result.map(i=>i.TotalRecovered)
-                //   }
-                // ]
+                this.setOptions(result)
               )
   }
-//   Country: "Malaysia"
-// CountryCode: "MY"
-// Date: "2020-08-06T07:20:24Z"
-// NewConfirmed: 21
-// NewDeaths: 0
-// NewRecovered: 18
-// Premium: {}
-// Slug: "malaysia"
-// TotalConfirmed: 9023
-// TotalDeaths: 125
-// TotalRecovered: 8702
 
   ngOnInit(): void {
     this.getCountries();
