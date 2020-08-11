@@ -70,7 +70,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate component pages/settings/app --module settings.module
 - ng generate module pages/forms --route forms --module pages.module
 
-- npm install echarts ngx-echarts
+- npm install echarts ngx-echarts (COMPATIBILITY ISSUE WITH NG10)
+- npm install @swimlane/ngx-charts
 
 - ng generate module pages/[page name] --route [page name] --module pages.module
 
@@ -88,3 +89,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://medium.com/better-programming/fantastic-translations-and-where-to-find-them-421ee46f59db
 - https://medium.com/@TuiZ/how-to-split-your-i18n-file-per-lazy-loaded-module-with-ngx-translate-3caef57a738f
 - https://stackoverflow.com/questions/58354348/windows-10-npx-create-react-app-myapp-command-does-not-work-because-of-whit
+- https://github.com/mpalourdio/ng-http-loader
+- https://github.com/auth0/angular2-jwt

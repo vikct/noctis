@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {  interval, timer } from 'rxjs';
-import { flatMap, groupBy, map } from 'rxjs/operators';
+import { filter, flatMap, groupBy, map } from 'rxjs/operators';
 
 import { Covid19Service } from './covid19.service';
-import { Documentation, Country, CountryStatus } from './interfaces/covid19.interface';
+import { Documentation, Country, CountryStatus, CountrySummary } from './interfaces/covid19.interface';
 
+interface saleData {
+  name: string,
+  value: number
+}
 @Component({
   selector: 'app-covid19',
   templateUrl: './covid19.component.html',
@@ -23,6 +27,8 @@ export class Covid19Component implements OnInit {
   selectedCountry: string;
   countryCasesChartOptions: any;
   cases: CountryStatus[] = [];
+  countrySummary: CountrySummary[] = [];
+  test: saleData[] = [];
 
   constructor(private covid19Service: Covid19Service) {
     this.getCasesByCountry(this.selectedCountry);
@@ -67,51 +73,98 @@ export class Covid19Component implements OnInit {
   }
 
   onChangeCountry(country: string) {
-    console.log('change country');
     this.covid19Service.countryDayOneRoute(country).subscribe(cases => {
       this.cases = cases;
-      this.setOptions();
     });
   }
 
-  setOptions() {
-    this.countryCasesChartOptions = {
-      title: {
-        text: 'COVID-19 STATUS CHART',
-      },
-      legend: {
-        data: ['Confirmed', 'Recovered', 'Deaths']
-      },
-      tooltip: {
-      },
-      xAxis: {
-        data: this.cases.map(c => new Date(c.Date).toLocaleDateString()),
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [{
-        name: 'Confirmed',
-        type: 'line',
-        data: this.cases.map(c => c.Confirmed),
+  // setOptions() {
+  //   this.countryCasesChartOptions = {
+  //     title: {
+  //       text: 'COVID-19 STATUS CHART',
+  //     },
+  //     legend: {
+  //       data: ['Confirmed', 'Recovered', 'Deaths']
+  //     },
+  //     tooltip: {
+  //     },
+  //     xAxis: {
+  //       data: this.cases.map(c => new Date(c.Date).toLocaleDateString()),
+  //     },
+  //     yAxis: {
+  //       type: 'value'
+  //     },
+  //     series: [{
+  //       name: 'Confirmed',
+  //       type: 'line',
+  //       data: this.cases.map(c => c.Confirmed),
+  //     },
+  //     {
+  //       name: 'Recovered',
+  //       type: 'line',
+  //       data: this.cases.map(c => c.Recovered),
+  //     },
+  //     {
+  //       name: 'Deaths',
+  //       type: 'line',
+  //       data: this.cases.map(c => c.Deaths),
+  //     },
+  //     ]
+  //   };
+  // }
+
+  setOptions(list) {
+    console.log(list);
+    this.test = list;
+    this.test = [
+      {
+        name: 'New Confirmed',
+        value: list.NewConfirmed
       },
       {
-        name: 'Recovered',
-        type: 'line',
-        data: this.cases.map(c => c.Recovered),
+        name: 'New Deaths',
+        value: list.NewDeaths
       },
       {
-        name: 'Deaths',
-        type: 'line',
-        data: this.cases.map(c => c.Deaths),
+        name: 'New Recovered',
+        value: list.NewRecovered
       },
-      ]
-    };
+      {
+        name: 'Total Confirmed',
+        value: list.TotalConfirmed
+      },
+      {
+        name: 'Total Deaths',
+        value: list.TotalDeaths
+      },
+      {
+        name: 'Total Recovered',
+        value: list.TotalRecovered
+      }
+    ]
+  }
+
+  getCountrySummary(country: string) {
+    // console.log(country);
+    return this.covid19Service
+              .summaryRoute()
+              .pipe(
+                flatMap(data =>
+                  this.countrySummary = data.Countries
+                    .filter(filter =>
+                      filter.Slug == country
+                    ),
+                ),
+              )
+              .subscribe(result =>
+                this.setOptions(result)
+              )
   }
 
   ngOnInit(): void {
     this.getCountries();
     this.getDocumentation();
+    this.getCountrySummary(this.selectedCountry);
   }
 
 }

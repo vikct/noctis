@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Documentation, Country, CountryStatus } from './interfaces/covid19.interface';
-import { map } from 'rxjs/operators';
 
 const BASE_URL = 'https://api.covid19api.com';
 
@@ -24,5 +23,9 @@ export class Covid19Service {
 
   countryDayOneRoute(country: string) {
     return this.http.get<CountryStatus[]>(`${BASE_URL}/dayone/country/${country}`);
+  }
+
+  summaryRoute() {
+    return this.http.get<any>(`${BASE_URL}/summary`);
   }
 }
