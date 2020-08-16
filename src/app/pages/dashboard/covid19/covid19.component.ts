@@ -30,6 +30,16 @@ export class Covid19Component implements OnInit {
   countrySummary: CountrySummary[] = [];
   test: saleData[] = [];
 
+  view: any[] = [1100];
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showLabels: boolean = true;
+  isDoughnut: boolean = false;
+  colorScheme = {
+    // domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#AAAAAA', '#A10A28', '#5AA454']
+  };
+
   constructor(private covid19Service: Covid19Service) {
     this.getCasesByCountry(this.selectedCountry);
   }
@@ -161,10 +171,24 @@ export class Covid19Component implements OnInit {
               )
   }
 
+  onSelect(data): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
+
   ngOnInit(): void {
+    const init = 'malaysia';
     this.getCountries();
     this.getDocumentation();
-    this.getCountrySummary(this.selectedCountry);
+    // this.getCountrySummary(this.selectedCountry);
+    this.getCountrySummary(init);
   }
 
 }
