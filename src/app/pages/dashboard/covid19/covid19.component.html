@@ -20,7 +20,7 @@
     [scheme]="colorScheme"
     [results]="test"
     [gradient]="gradient"
-    [label]="'Total Cases'"
+    [label]="'Total Cases: ' + selectedCountry | titlecase"
     (select)="onSelect($event)"
     (activate)="onActivate($event)"
     (deactivate)="onDeactivate($event)"
