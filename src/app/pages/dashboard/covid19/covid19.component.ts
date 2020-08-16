@@ -184,11 +184,11 @@ export class Covid19Component implements OnInit {
   }
 
   ngOnInit(): void {
-    const init = 'malaysia';
+    this.selectedCountry = 'malaysia';
     this.getCountries();
     this.getDocumentation();
     // this.getCountrySummary(this.selectedCountry);
-    this.getCountrySummary(init);
+    this.getCountrySummary(this.selectedCountry);
   }
 
 }
