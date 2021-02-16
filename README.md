@@ -35,7 +35,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Create theme
 - ng add @angular/material
 - npm install --save material-design-icons
-- npm install @spectrum-css/vars @spectrum-css/button @spectrum-css/page (OPTIONAL)
+- npm install @spectrum-css/vars @spectrum-css/typography @spectrum-css/page @spectrum-css/icon @spectrum-css/button (OPTIONAL)
 - npm install bootstrap (OPTIONAL)
 - npm install flexiblegrid (OPTIONAL)
 - ng add @ngneat/transloco
