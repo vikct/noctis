@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
-    "@auth0/angular-jwt": "^5.0.1",
+    "@auth0/angular-jwt": "^5.0.2",
     "@ngneat/transloco": "^2.20.0",
     "@spectrum-css/button": "^3.0.0",
     "@spectrum-css/icon": "^3.0.0",
