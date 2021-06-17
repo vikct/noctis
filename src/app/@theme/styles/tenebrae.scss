@@ -1,22 +1,22 @@
+@use '~@angular/material' as mat;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$tenebrae-primary: mat-palette($mat-yellow, 50);
-$tenebrae-accent: mat-palette($mat-amber, A200, A100, A400);
+$tenebrae-primary: mat.define-palette(mat.$yellow-palette, 50);
+$tenebrae-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$tenebrae-warn: mat-palette($mat-red);
+$tenebrae-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$tenebrae-theme: mat-light-theme($tenebrae-primary, $tenebrae-accent, $tenebrae-warn);
+$tenebrae-theme: mat.define-light-theme($tenebrae-primary, $tenebrae-accent, $tenebrae-warn);
