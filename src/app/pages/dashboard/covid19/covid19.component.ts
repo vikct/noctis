@@ -22,7 +22,8 @@ export class Covid19Component implements OnInit {
   countries: Country[];
   docs: Documentation[];
   displayedColumns: string[] = ['Name', 'Description', 'Path'];
-  dataSource = this.docs;
+  // dataSource = this.docs;
+  dataSource: Documentation[];
 
   selectedCountry: string;
   countryCasesChartOptions: any;
@@ -41,6 +42,8 @@ export class Covid19Component implements OnInit {
   };
 
   constructor(private covid19Service: Covid19Service) {
+
+    this.dataSource = this.docs;
     this.getCasesByCountry(this.selectedCountry);
   }
 
